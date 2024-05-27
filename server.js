@@ -2,12 +2,13 @@ const express = require('express')
 const app = express()
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+const cors = require('cors');
 dotenv.config()
 const recipeRouter = require('./controllers/recipes.js')
 
 mongoose.connect(process.env.MONGODB_URI)
 
-
+app.use(cors());
 app.use(express.json())
 
 app.use('/recipes', recipeRouter);
