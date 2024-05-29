@@ -18,9 +18,9 @@ router.get('/', async (req,res)=>{
     }
 })
 
-router.get('/:recipeId', async (req,res)=>{
+router.get('/recipes/:id', async (req,res)=>{
     try{
-        const foundRecipe = await Recipe.findById(req.params.recipeId)
+        const foundRecipe = await Recipe.findById(req.params.id)
         res.status(200).json(foundRecipe)
     } catch (error) {
         res.status(500).json({error:error.message})
