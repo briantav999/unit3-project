@@ -4,7 +4,7 @@ const router = express.Router();
 const Recipe = require('../models/recipe.js');
 
 
-router.post('/', async (req,res) => {
+router.post('/recipes', async (req,res) => {
     const createdRecipe = await Recipe.create(req.body);
     res.json(createdRecipe)
 })
@@ -28,7 +28,7 @@ router.get('/recipes/:id', async (req,res)=>{
 })
 
 
-router.delete('/:recipeId', async (req,res)=>{
+router.delete('/recipes/:id', async (req,res)=>{
     try{
         const deleteRecipe = await Recipe.findByIdAndDelete(req.params.recipeId)
         res.status(200).json(deleteRecipe)
@@ -38,7 +38,7 @@ router.delete('/:recipeId', async (req,res)=>{
 })
 
 
-router.put('/:recipeId', async (req,res)=>{
+router.put('/recipes/:id', async (req,res)=>{
     try{
         const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.recipeId)
         res.status(200).json(updatedRecipe)
