@@ -20,7 +20,8 @@ const recipeSchema = mongoose.Schema({
     cuisineType: String,
 
 })
-//test
+//Why does this not work??
+
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
