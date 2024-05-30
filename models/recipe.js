@@ -1,25 +1,27 @@
 const mongoose = require('mongoose')
 
-const ingredientSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    quantity: {
-        type: String,
-        required: true
-    }
-});
+// const ingredientSchema = new mongoose.Schema({
+//     name: {
+//         type: String,
+//         required: true
+//     },
+//     quantity: {
+//         type: String,
+//         required: true
+//     }
+// });
 
 const recipeSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    ingredients: [ingredientSchema], 
-    cuisineType:String,
+    ingredients: [String], 
+    cuisineType: String,
 
 })
+//Why does this not work??
+
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
