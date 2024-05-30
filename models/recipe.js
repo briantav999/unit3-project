@@ -20,6 +20,7 @@ const recipeSchema = mongoose.Schema({
     cuisineType: String,
 
 })
+//test
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
